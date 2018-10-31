@@ -100,7 +100,7 @@ label{
 }
 
 .radio-toolbar input[type="radio"]:checked+label {
-  background-color: blue;/*#bbb;*/
+  background-color: #bbb;
 }
 
 
@@ -129,7 +129,7 @@ button {
 
 .arc text {
   font: 10px sans-serif;
-/*    color: #ffffff;*/
+    color: #ffffff;
   text-anchor: middle;
 }
 .arc path {
