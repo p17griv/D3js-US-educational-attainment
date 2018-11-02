@@ -129,8 +129,8 @@ button {
 
 .arc text {
   font: 10px sans-serif;
-    color: black;
-  text-anchor: middle;
+/*    color: #ffffff;*/
+	text-anchor: middle;
 }
 .arc path {
   stroke: #fff;
@@ -189,7 +189,7 @@ polyline{
 #pie-chart {
     display: block;
     margin: 0 auto;
-	background-color: blue;
+		color: blue;
 }
 
 #treemap {
