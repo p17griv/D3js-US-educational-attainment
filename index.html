@@ -10,7 +10,7 @@
 </head>
   <header>
        <nav>
-				<ul>
+				<ul id="navbar">
 					<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#top" >Top</a></li>
 					<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#national">National</a></li>
 					<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#regional">Regional</a></li>
@@ -30,8 +30,10 @@
 					}	
 				</script>
 				<script>
-					$(document).ready(function(){
-					    $("#pie-chart").trigger("click");
+					$("document").ready(function() {
+					    setTimeout(function() {
+						$("#navbar").trigger('click');
+					    },10);
 					});
 				</script>
         </nav>
