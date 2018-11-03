@@ -30,11 +30,9 @@
 					}	
 				</script>
 				<script>
-					$("document").ready(function() {
-					    setTimeout(function() {
-						$("#navbar").trigger('click');
-					    },10);
-					});
+					window.onload=function(){
+					  document.getElementById("linkid").click();
+					};
 				</script>
         </nav>
     </header>
