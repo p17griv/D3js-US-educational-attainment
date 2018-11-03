@@ -10,12 +10,25 @@
 </head>
   <header>
        <nav>
-    <ul>
-      <li><a href="#top" >Top</a></li>
-      <li><a href="#national">National</a></li>
-      <li><a href="#regional">Regional</a></li>
-      <li><a href="#state">State-Level</a></li>
-    <ul>
+				<ul>
+					<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#top" >Top</a></li>
+					<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#national">National</a></li>
+					<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#regional">Regional</a></li>
+					<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#state">State-Level</a></li>
+				<ul>
+	    	<audio id='mySound' src='http://upload.wikimedia.org/wikipedia/commons/6/6f/Cello_Live_Performance_John_Michel_Tchaikovsky_Violin_Concerto_3rd_MVT_applaused_cut.ogg'/>
+				<script>
+					function PlaySound(soundobj) {
+							var thissound=document.getElementById(soundobj);
+							thissound.play();
+					}
+
+					function StopSound(soundobj) {
+							var thissound=document.getElementById(soundobj);
+							thissound.pause();
+							thissound.currentTime = 0;
+					}	
+				</script>
         </nav>
     </header>
 <body>
