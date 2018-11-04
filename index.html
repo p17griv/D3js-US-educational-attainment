@@ -65,19 +65,15 @@
 			thissound.currentTime = 0;
 	}	
 	</script>
-<!--       <nav>
-		<ul id="navbar">
-			<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#top" >Top</a></li>
-			<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#national">National</a></li>
-			<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#regional">Regional</a></li>
-			<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#state">State-Level</a></li>
-		<ul>
-	    	
-        </nav>-->
     </header>
 <body>
-	
-    <h1 class="title" id="tts">Educational Attainment in the United States</h1>
+	<div class="container-fluid">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8">
+    			<h1 class="title" id="tts">Educational Attainment in the United States</h1>
+		</div>
+		<div class="col-sm-2"></div>
+	</div>
 	<script>
 		document.getElementById("tts").onmouseover = function() {mouseOver()};
 		document.getElementById("tts").onmouseout = function() {mouseOut()};
