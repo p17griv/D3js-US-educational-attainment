@@ -44,6 +44,16 @@
 			
 	</script>
 	
+	<script>
+			function speak (message) {
+			  var msg = new SpeechSynthesisUtterance(message)
+			  var voices = window.speechSynthesis.getVoices()
+			  msg.voice = voices[0]
+			  window.speechSynthesis.speak(msg)
+			}
+			speak('Hello world!')
+		</script>
+	
 	<p><br></p>
     <h2 class="subtitle" id="tts1">Nation-Wide Education Level of Population in Schooling</h2>
 	<script>
