@@ -22,48 +22,7 @@
 
 </head>
   <header>
-	<nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
-		<!-- Toggler/collapsibe Button -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<!-- onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"-->
-		<!-- Navbar links -->
-		<div class="collapse navbar-collapse" id="collapsibleNavbar">
-			<ul class="navbar-nav">
-				<li class="nav-item">
-					<a class="nav-link" href="#top" class="active">Top</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#national" class="active">National</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#regional" class="active">Regional</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#state" class="active">State-Level</a>
-				</li>
-			</ul>
-		</div> 
-	</nav>
-	<script>
-		$('.navbar-nav>li>a').on('click', function(){
-			$('.navbar-collapse').collapse('hide');
-		});
-	</script>
-	<audio id='mySound' src="assets/sounds/mouse hover sound.mp3"/>
-	<script>
-		function PlaySound(soundobj) {
-				var thissound=document.getElementById(soundobj);
-				thissound.play();
-		}
 
-		function StopSound(soundobj) {
-				var thissound=document.getElementById(soundobj);
-				thissound.pause();
-				thissound.currentTime = 0;
-		}	
-	</script>
 <!--       <nav>
 		<ul id="navbar">
 			<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#top" >Top</a></li>
@@ -75,7 +34,48 @@
         </nav>-->
     </header>
 <body>
-	
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
+	<!-- Toggler/collapsibe Button -->
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<!-- onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"-->
+	<!-- Navbar links -->
+	<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link" href="#top" class="active">Top</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#national" class="active">National</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#regional" class="active">Regional</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#state" class="active">State-Level</a>
+			</li>
+		</ul>
+	</div> 
+	</nav>
+	<script>
+	$('.navbar-nav>li>a').on('click', function(){
+		$('.navbar-collapse').collapse('hide');
+	});
+	</script>
+	<audio id='mySound' src="assets/sounds/mouse hover sound.mp3"/>
+	<script>
+	function PlaySound(soundobj) {
+			var thissound=document.getElementById(soundobj);
+			thissound.play();
+	}
+
+	function StopSound(soundobj) {
+			var thissound=document.getElementById(soundobj);
+			thissound.pause();
+			thissound.currentTime = 0;
+	}	
+	</script>
     <h1 class="title" id="tts">Educational Attainment in the United States</h1>
 	<script>
 		document.getElementById("tts").onmouseover = function() {mouseOver()};
