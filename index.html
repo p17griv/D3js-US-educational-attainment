@@ -11,48 +11,42 @@
 </head>
   <header>
        <nav>
-				<ul id="navbar">
-					<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#top" >Top</a></li>
-					<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#national">National</a></li>
-					<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#regional">Regional</a></li>
-					<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#state">State-Level</a></li>
-				<ul>
+		<ul id="navbar">
+			<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#top" >Top</a></li>
+			<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#national">National</a></li>
+			<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#regional">Regional</a></li>
+			<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#state">State-Level</a></li>
+		<ul>
 	    	<audio id='mySound' src="assets/sounds/mouse hover sound.mp3"/>
-				<script>
-					function PlaySound(soundobj) {
-							var thissound=document.getElementById(soundobj);
-							thissound.play();
-					}
+		<script>
+			function PlaySound(soundobj) {
+					var thissound=document.getElementById(soundobj);
+					thissound.play();
+			}
 
-					function StopSound(soundobj) {
-							var thissound=document.getElementById(soundobj);
-							thissound.pause();
-							thissound.currentTime = 0;
-					}	
-				</script>
+			function StopSound(soundobj) {
+					var thissound=document.getElementById(soundobj);
+					thissound.pause();
+					thissound.currentTime = 0;
+			}	
+		</script>
         </nav>
     </header>
 <body>
-	<script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+	
     <h1 class="title" id="tts">Educational Attainment in the United States</h1>
-    <script>
-			document.getElementById("tts").onmouseover = function() {mouseOver()};
-			
-			function mouseOver(){
-				responsiveVoice.speak("Educational Attainment in the United States", "UK English Male", {rate: 1});
-			}
-			
+	<script>
+		document.getElementById("tts").onmouseover = function() {mouseOver()};
+		document.getElementById("tts").onmouseout = function() {mouseOut()};
+		function mouseOver(){
+			speak('Educational Attainment in the United States", "UK English Male');
+		}
+		function mouseOut(){
+			window.speechSynthesis.cancel();
+		}
 	</script>
 	
-	<script>
-			function speak (message) {
-			  var msg = new SpeechSynthesisUtterance(message)
-			  var voices = window.speechSynthesis.getVoices()
-			  msg.voice = voices[0]
-			  window.speechSynthesis.speak(msg)
-			}
-			speak('Hello world!')
-		</script>
+
 	
 	<p><br></p>
     <h2 class="subtitle" id="tts1">Nation-Wide Education Level of Population in Schooling</h2>
@@ -60,10 +54,10 @@
 			document.getElementById("tts1").onmouseover = function() {mouseOver1()};
 			document.getElementById("tts1").onmouseout = function() {mouseOut1()};
 			function mouseOver1(){
-				responsiveVoice.speak("Nation-Wide Education Level of Population in Schooling", "UK English Male", {rate: 1});
+				speak('Nation-Wide Education Level of Population in Schooling", "UK English Male');
 			}
 			function mouseOut1(){
-				responsiveVoice.cancel();
+				window.speechSynthesis.cancel();
 			}
 	</script>
 	
@@ -124,5 +118,14 @@
  */
 </script>
 
+<script>
+	function speak (message) {
+	  var msg = new SpeechSynthesisUtterance(message)
+	  var voices = window.speechSynthesis.getVoices()
+	  msg.voice = voices[1]
+	  window.speechSynthesis.speak(msg)
+	}
+</script>
+	
 </body>
 </html>
