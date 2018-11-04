@@ -7,7 +7,7 @@
     <link href="assets/stylesheets/style.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-	<script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+	
 </head>
   <header>
        <nav>
@@ -17,10 +17,23 @@
 					<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#regional">Regional</a></li>
 					<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#state">State-Level</a></li>
 				<ul>
+	    	<audio id='mySound' src="assets/sounds/mouse hover sound.mp3"/>
+				<script>
+					function PlaySound(soundobj) {
+							var thissound=document.getElementById(soundobj);
+							thissound.play();
+					}
 
+					function StopSound(soundobj) {
+							var thissound=document.getElementById(soundobj);
+							thissound.pause();
+							thissound.currentTime = 0;
+					}	
+				</script>
         </nav>
     </header>
 <body>
+	<script src="http://code.responsivevoice.org/responsivevoice.js"></script>
     <h1 class="title" id="tts">Educational Attainment in the United States</h1>
     <script>
 			document.getElementById("tts").onmouseover = function() {mouseOver()};
