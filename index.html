@@ -7,30 +7,72 @@
     <link href="assets/stylesheets/style.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-	
+	<!--INCLUDING BOOTSTRAP 4-->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
 </head>
   <header>
-       <nav>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item" onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')">
+					<a class="nav-link" href="#top">Top</a>
+				</li>
+				<li class="nav-item" onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')">
+					<a class="nav-link" href="#national">National</a>
+				</li>
+				<li class="nav-item" onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')">
+					<a class="nav-link" href="#regional">Regional</a>
+				</li>
+				<li class="nav-item" onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')">
+					<a class="nav-link" href="#state">State-Level</a>
+				</li>
+			</ul>
+		</div> 
+	</nav>
+	<script>
+		$('.navbar-nav>li>a').on('click', function(){
+			$('.navbar-collapse').collapse('hide');
+		});
+	</script>
+	<audio id='mySound' src="assets/sounds/mouse hover sound.mp3"/>
+	<script>
+		function PlaySound(soundobj) {
+				var thissound=document.getElementById(soundobj);
+				thissound.play();
+		}
+
+		function StopSound(soundobj) {
+				var thissound=document.getElementById(soundobj);
+				thissound.pause();
+				thissound.currentTime = 0;
+		}	
+	</script>
+<!--       <nav>
 		<ul id="navbar">
 			<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#top" >Top</a></li>
 			<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#national">National</a></li>
 			<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#regional">Regional</a></li>
 			<li onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')"><a href="#state">State-Level</a></li>
 		<ul>
-	    	<audio id='mySound' src="assets/sounds/mouse hover sound.mp3"/>
-		<script>
-			function PlaySound(soundobj) {
-					var thissound=document.getElementById(soundobj);
-					thissound.play();
-			}
-
-			function StopSound(soundobj) {
-					var thissound=document.getElementById(soundobj);
-					thissound.pause();
-					thissound.currentTime = 0;
-			}	
-		</script>
-        </nav>
+	    	
+        </nav>-->
     </header>
 <body>
 	
@@ -173,8 +215,8 @@
     <div>
         <svg id="stacked-bar-chart"></svg>
     </div>
-
-    
+	
+	
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src="assets/scripts/script_1.js"></script>
