@@ -30,21 +30,6 @@
 							thissound.currentTime = 0;
 					}	
 				</script>
-				<script>
-					var synth = window.speechSynthesis;
-					inputForm.onsubmit = function(event) {
-					  event.preventDefault();
-
-					  var utterThis = new SpeechSynthesisUtterance("Text Text Text");
-					  var selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
-					  for(i = 0; i < voices.length ; i++) {
-					    if(voices[i].name === selectedOption) {
-					      utterThis.voice = voices[i];
-					    }
-					  }
-					  synth.speak(utterThis);
-					  inputTxt.blur();
-				</script>
         </nav>
     </header>
 <body>
