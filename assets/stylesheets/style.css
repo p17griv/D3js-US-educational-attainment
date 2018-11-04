@@ -70,6 +70,11 @@ nav ul li a {
   color: #a9abae;
 }
 
+.navbar-nav{
+	margin-left: auto;
+	margin-right: auto;
+}	
+
 body {
     font-size: 14px;
     font-family: "Muli", "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
