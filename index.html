@@ -37,13 +37,11 @@
     <h1 class="title" id="tts">Educational Attainment in the United States</h1>
     <script>
 			document.getElementById("tts").onmouseover = function() {mouseOver()};
-			document.getElementById("tts").onmouseout = function() {mouseOut()};
+			
 			function mouseOver(){
 				responsiveVoice.speak("Educational Attainment in the United States", "UK English Male", {rate: 1});
 			}
-			function mouseOut(){
-				responsiveVoice.cancel();
-			}
+			
 	</script>
 	
 	<p><br></p>
