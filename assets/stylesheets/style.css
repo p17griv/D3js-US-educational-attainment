@@ -24,7 +24,7 @@
 	-ms-box-sizing: border-box;
 }
 
-/*
+
 header {
   height:36px;
   z-index:10;
@@ -74,7 +74,7 @@ nav ul li a {
 	margin-left: auto;
 	margin-right: auto;
 }	
-*/
+
 body {
     font-size: 14px;
     font-family: "Muli", "Gill Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
