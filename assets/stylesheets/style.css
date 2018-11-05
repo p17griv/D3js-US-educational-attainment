@@ -103,6 +103,7 @@ label{
   font-size: 16px;
   cursor: pointer;
 	color: grey;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
 }
 
 .radio-toolbar input[type="radio"]:checked+label {
