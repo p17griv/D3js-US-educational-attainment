@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Examples</title>
+    <link href="assets/stylesheets/style.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<!--INCLUDE BOOTSTRAP 4-->
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+</head>
+  <header>
+		<nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
+			<!-- Toggler/collapsibe Button -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<!-- Navbar links -->
+			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+				<ul class="navbar-nav">
+					<li class="nav-item" onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')">
+						<a class="nav-link" href="#top">Top</a>
+					</li>
+					<li class="nav-item" onclick="showFirstChart()" onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')">
+						<a class="nav-link" class="navItem" href="#energy">Energy</a>
+					</li>
+					<li class="nav-item" onclick="showSecondChart()" onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')">
+						<a class="nav-link" class="navItem" href="#treeCrops">Tree Crops</a>
+					</li>
+				</ul>
+			</div> 
+		</nav>
+	
+	<script>
+		$('.navbar-nav>li>a').on('click', function(){
+			$('.navbar-collapse').collapse('hide');
+		});
+		</script>
+		<audio id='mySound' src="assets/sounds/mouse hover sound.mp3"/>
+	<script>
+	function PlaySound(soundobj) {
+			var thissound=document.getElementById(soundobj);
+			thissound.play();
+	}
+
+	function StopSound(soundobj) {
+			var thissound=document.getElementById(soundobj);
+			thissound.pause();
+			thissound.currentTime = 0;
+	}	
+	</script>
+    </header>
+<body>
+    <h1 class="title" id="tts">Corfu Statistics</h1>
+	<script>
+		document.getElementById("tts").onmouseover = function() {mouseOver()};
+		document.getElementById("tts").onmouseout = function() {mouseOut()};
+		function mouseOver(){
+			speak('Corfu Statistics');
+		}
+		function mouseOut(){
+			window.speechSynthesis.cancel();
+		}
+	</script>
+	
+
+	<div id="chrt1" style="display:block;">
+		<p><br></p>
+		    <h2 class="subtitle" id="tts1">Electric energy consumption by category of use in Corfu, 2012</h2>
+			<script>
+					document.getElementById("tts1").onmouseover = function() {mouseOver1()};
+					document.getElementById("tts1").onmouseout = function() {mouseOut1()};
+					function mouseOver1(){
+						speak('Electric energy consumption by category of use in Corfu, 2012');
+					}
+					function mouseOut1(){
+						window.speechSynthesis.cancel();
+					}
+			</script>
+			<div class="container-fluid">
+			    <div class="row">
+			        <div class="col"></div>
+			        <div class="col">
+			            <div id="pieChart"></div>
+			        </div>
+			        <div class="col"></div>
+			    </div>
+			</div>
+    	
+            <script src="//cdnjs.cloudflare.com/ajax/libs/d3/4.7.2/d3.min.js"></script>
+            <script src="d3pie.min.js"></script>
+            <script>
+            var pie = new d3pie("pieChart", {"header":{"title":{"fontSize":24,"font":"open sans"},"subtitle":{"color":"#999999","fontSize":12,"font":"open sans"},"titleSubtitlePadding":9},"footer":{"color":"#999999","fontSize":10,"font":"open sans","location":"bottom-left"},"size":{"canvasWidth":590,"pieOuterRadius":"90%"},"data":{"sortOrder":"value-desc","content":[{"label":"Domestic","value":264131,"color":"#2383c1"},{"label":"Commercial","value":218812,"color":"#64a61f"},{"label":"Industrial","value":157618,"color":"#7b6788"},{"label":"Agricultural","value":114384,"color":"#a05c56"},{"label":"Public and Municipal Authorities","value":95002,"color":"#961919"},{"label":"Streeet Lighting","value":78327,"color":"#d8d239"}]},"labels":{"outer":{"pieDistance":32},"inner":{"hideWhenLessThanPercentage":3},"mainLabel":{"fontSize":11},"percentage":{"color":"#ffffff","decimalPlaces":0},"value":{"color":"#adadad","fontSize":11},"lines":{"enabled":true},"truncation":{"enabled":true}},"effects":{"pullOutSegmentOnClick":{"effect":"linear","speed":400,"size":8}},"misc":{"gradient":{"enabled":true,"percentage":100}}});
+            </script>
+	</div>
+
+	<div id="chrt2" style="display:none;">
+		<h2 class="subtitle" id="tts2">Tree Crops in Corfu, 2016</h2>
+		<script>
+				document.getElementById("tts2").onmouseover = function() {mouseOver2()};
+				document.getElementById("tts2").onmouseout = function() {mouseOut2()};
+				function mouseOver2(){
+					speak('Tree Crops in Corfu, 2016');
+				}
+				function mouseOut2(){
+					window.speechSynthesis.cancel();
+				}
+		</script>
+		<h6 class="subtitle" id="tts10">Corfu has 256,700 olive trees which is the 98% of all trees. The other 2% is:</h6>
+		<script>
+				document.getElementById("tts10").onmouseover = function() {mouseOver10()};
+				document.getElementById("tts10").onmouseout = function() {mouseOut10()};
+				function mouseOver10(){
+					speak('Corfu has 256,700 olive trees which is the 98% of all trees. The other 2% is:');
+				}
+				function mouseOut10(){
+					window.speechSynthesis.cancel();
+				}
+		</script>
+		<p></p>
+		<div class="container-fluid">
+		    <div class="row">
+		        <div class="col"></div>
+		        <div class="col">
+		            <div id="chart2"></div>
+		        </div>
+		        <div class="col"></div>
+		    </div>
+		</div>
+		    
+	    <script src="http://d3js.org/d3.v2.min.js"></script>
+	    <script>
+			function renderChart() {
+			
+			var data = d3.csv.parse(d3.select('#csv2').text());
+			var valueLabelWidth = 40; // space reserved for value labels (right)
+			var barHeight = 20; // height of one bar
+			var barLabelWidth = 100; // space reserved for bar labels
+			var barLabelPadding = 5; // padding between bar and bar labels (left)
+			var gridLabelHeight = 18; // space reserved for gridline labels
+			var gridChartOffset = 3; // space between start of grid and first bar
+			var maxBarWidth = 420; // width of the bar with the max value
+			 
+			// accessor functions 
+			var barLabel = function(d) { return d['Tree']; };
+			var barValue = function(d) { return parseFloat(d['Population']); };
+			 
+			// sorting
+			var sortedData = data.sort(function(a, b) {
+			 return d3.descending(barValue(a), barValue(b));
+			}); 
+			
+			// scales
+			var yScale = d3.scale.ordinal().domain(d3.range(0, sortedData.length)).rangeBands([0, sortedData.length * barHeight]);
+			var y = function(d, i) { return yScale(i); };
+			var yText = function(d, i) { return y(d, i) + yScale.rangeBand() / 2; };
+			var x = d3.scale.linear().domain([0, d3.max(sortedData, barValue)]).range([0, maxBarWidth]);
+			// svg container element
+			var chart = d3.select('#chart2').append("svg")
+			  .attr('width', maxBarWidth + barLabelWidth + valueLabelWidth)
+			  .attr('height', gridLabelHeight + gridChartOffset + sortedData.length * barHeight);
+			// grid line labels
+			var gridContainer = chart.append('g')
+			  .attr('transform', 'translate(' + barLabelWidth + ',' + gridLabelHeight + ')'); 
+			gridContainer.selectAll("text").data(x.ticks(10)).enter().append("text")
+			  .attr("x", x)
+			  .attr("dy", -3)
+			  .attr("text-anchor", "middle")
+			  .text(String);
+			// vertical grid lines
+			gridContainer.selectAll("line").data(x.ticks(10)).enter().append("line")
+			  .attr("x1", x)
+			  .attr("x2", x)
+			  .attr("y1", 0)
+			  .attr("y2", yScale.rangeExtent()[1] + gridChartOffset)
+			  .style("stroke", "#ccc");
+			// bar labels
+			var labelsContainer = chart.append('g')
+			  .attr('transform', 'translate(' + (barLabelWidth - barLabelPadding) + ',' + (gridLabelHeight + gridChartOffset) + ')'); 
+			labelsContainer.selectAll('text').data(sortedData).enter().append('text')
+			  .attr('y', yText)
+			  .attr('stroke', 'none')
+			  .attr('fill', 'black')
+			  .attr("dy", ".35em") // vertical-align: middle
+			  .attr('text-anchor', 'end')
+			  .text(barLabel);
+			// bars
+			var barsContainer = chart.append('g')
+			  .attr('transform', 'translate(' + barLabelWidth + ',' + (gridLabelHeight + gridChartOffset) + ')'); 
+			barsContainer.selectAll("rect").data(sortedData).enter().append("rect")
+			  .attr('y', y)
+			  .attr('height', yScale.rangeBand())
+			  .attr('width', function(d) { return x(barValue(d)); })
+			  .attr('stroke', 'white')
+			  .attr('fill', 'steelblue');
+			// bar value labels
+			barsContainer.selectAll("text").data(sortedData).enter().append("text")
+			  .attr("x", function(d) { return x(barValue(d)); })
+			  .attr("y", yText)
+			  .attr("dx", 3) // padding-left
+			  .attr("dy", ".35em") // vertical-align: middle
+			  .attr("text-anchor", "start") // text-align: right
+			  .attr("fill", "black")
+			  .attr("stroke", "none")
+			  .text(function(d) { return d3.round(barValue(d), 2); });
+			// start line
+			barsContainer.append("line")
+			  .attr("y1", -gridChartOffset)
+			  .attr("y2", yScale.rangeExtent()[1] + gridChartOffset)
+			  .style("stroke", "#000");
+			
+			}
+	    </script>
+	    <script id="csv2" type="text/csv">
+	    	Tree,Population
+			Lemon Tree,901
+			Orange Tree,1577
+			Mandarin Tree,333
+			Other Citrus Tree,77
+			Apple Tree,105
+			Pear Tree,90
+			Peach Tree,67
+			Apricot Tree,65
+			Cherry Tree,75
+			Other Fruit Tree,116
+			Almond Tree,331
+			Walnut Tree,139
+			Other Nut-bearing Tree,129
+			Other Trees,309
+		</script>
+	    <script>renderChart();</script>
+	    <p><br><br></p>
+	</div>
+    
+    
+    <div class="container">
+    	<p style="text-align: center; font-weight: bold; fort-size: 80px;">
+    		<a style="text-decoration: none; color: #1c1e21;" href="index.html">Go Back >></a>
+    	</p>
+    </div>
+    
+    
+	
+	
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="assets/scripts/script_1.js"></script>
+<script src="assets/scripts/script_2.js"></script>
+<script src="assets/scripts/script_3.js"></script>
+<script>
+    $( document ).ready(function() {
+      $(window).scroll(function(){
+        if ($(window).scrollTop() >= 300) {
+           $('nav').addClass('fixed-header');
+        }
+        else {
+           $('nav').removeClass('fixed-header');
+        }
+    });
+});
+
+/* scrollTop() >= 240
+   Should be equal the the height of the header
+ */
+</script>
+
+<script>
+	function speak (message) {
+	  var msg = new SpeechSynthesisUtterance(message);
+	  var voices = window.speechSynthesis.getVoices();
+	  msg.voice = voices[0];
+	  window.speechSynthesis.speak(msg);
+	}
+</script>
+	
+<script>
+	function showFirstChart() {
+	  var x = document.getElementById("chrt1");
+	  var y = document.getElementById("chrt2");
+	    x.style.display = "block";
+	    y.style.display = "none";
+	}
+	
+	function showSecondChart() {
+	  var x = document.getElementById("chrt1");
+	  var y = document.getElementById("chrt2");
+	    x.style.display = "none";
+	    y.style.display = "block";
+	}
+	
+</script>
+	
+</body>
+</html>
