@@ -35,13 +35,13 @@
 					<li class="nav-item" onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')">
 						<a class="nav-link" href="#top">Top</a>
 					</li>
-					<li class="nav-item" onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')">
+					<li class="nav-item" onclick="showFirstChart()" onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')">
 						<a class="nav-link" href="#national">National</a>
 					</li>
-					<li class="nav-item" onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')">
+					<li class="nav-item" onclick="showSecondChart()" onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')">
 						<a class="nav-link" href="#regional">Regional</a>
 					</li>
-					<li class="nav-item" onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')">
+					<li class="nav-item" onclick="showThirdChart()" onmouseover="PlaySound('mySound')"onmouseout="StopSound('mySound')">
 						<a class="nav-link" href="#state">State-Level</a>
 					</li>
 				</ul>
@@ -83,6 +83,7 @@
 
 	
 	<p><br></p>
+<div id="chrt1" style="display:none;">
     <h2 class="subtitle" id="tts1">Nation-Wide Education Level of Population in Schooling</h2>
 	<script>
 			document.getElementById("tts1").onmouseover = function() {mouseOver1()};
@@ -96,6 +97,8 @@
 	</script>
     		<svg id="pie-chart" width="960" height="450"></svg><a name="regional"></a>
     <p><br><br><br></p>
+</div>
+<div id="chrt2" style="display:block;">
     <h2 class="subtitle" id="tts2">Educational Attainment: Region-level Breakdown of University Students</h2>
 	<script>
 			document.getElementById("tts2").onmouseover = function() {mouseOver2()};
@@ -164,6 +167,8 @@
     <div id="chart"></div>
 	<a name="state"></a>
     <p><br><br></p>
+</div>
+<div id="chrt3" style="display:none;">
     <h2 class="subtitle" id="tts7">Education Level of Population in Schooling: State-level Breakdown</h2>
 	<script>
 		document.getElementById("tts7").onmouseover = function() {mouseOver7()};
@@ -206,6 +211,12 @@
     <div>
         <svg id="stacked-bar-chart"></svg>
     </div>
+</div>
+	<div class="container">
+		<p style="text-align: center; font-weight: bold; fort-size: 80px;">
+			<a style="text-decoration: none; color: #1c1e21;" href="index2.html">Show more examples >></a>
+		</p>
+	</div>
 	
 	
 <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -236,6 +247,35 @@
 	  var voices = window.speechSynthesis.getVoices()
 	  msg.voice = voices[0]
 	  window.speechSynthesis.speak(msg)
+	}
+</script>
+	
+<script>
+	function showFirstChart() {
+	  var x = document.getElementById("chrt1");
+	  var y = document.getElementById("chrt2");
+	  var z = document.getElementById("chrt3");
+	    x.style.display = "block";
+	    y.style.display = "none";
+	    z.style.display = "none";
+	}
+	
+	function showSecondChart() {
+	  var x = document.getElementById("chrt1");
+	  var y = document.getElementById("chrt2");
+	  var z = document.getElementById("chrt3");
+	    x.style.display = "none";
+	    y.style.display = "block";
+	    z.style.display = "none";
+	}
+	
+	function showThirdChart() {
+	  var x = document.getElementById("chrt1");
+	  var y = document.getElementById("chrt2");
+	  var z = document.getElementById("chrt3");
+	    x.style.display = "none";
+	    y.style.display = "none";
+	    z.style.display = "block";
 	}
 </script>
 	
